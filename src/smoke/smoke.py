@@ -12,8 +12,7 @@ class smoke:
 	def draw(self, screen):
 		self.image.set_alpha(255-self.t)
 		screen.blit(self.image, (self.x, self.y))
-		#pygame.draw.rect(screen, (255, 255, 255), pygame.Rect(self.x, self.y, 10, 10))
-
+		
 	def update(self):
 		self.t += 1
 

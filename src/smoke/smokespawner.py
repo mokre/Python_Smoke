@@ -4,10 +4,9 @@ from smoke import smoke
 class smokespawner:
 	def __init__(self, x, y, smokeimage):
 		self.smokeobjects = []
-		#self.image = pygame.transform.scale(image, (size, size))
 		self.smokeimage = smokeimage
-		self.x = x
-		self.y = y
+		self.x = x-5
+		self.y = y-5
 		self.t = 0
 
 	def draw(self, screen):
@@ -15,12 +14,13 @@ class smokespawner:
 		for o in self.smokeobjects:
 			o.update()
 			o.draw(screen)
+			if o.t >= 255:
+				self.smokeobjects.remove(o)
 
 	def update(self):
 		self.t += 1
 
 	def event(self, event):
-		#if player presses left mouse button
 		if event.type == pygame.MOUSEBUTTONDOWN:
 			if event.button == 1:
 				self.smokeobjects.append(smoke.smoke(pygame.mouse.get_pos()[0], pygame.mouse.get_pos()[1], self.smokeimage))
