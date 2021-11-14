@@ -15,4 +15,7 @@ class smoke:
 		#pygame.draw.rect(screen, (255, 255, 255), pygame.Rect(self.x, self.y, 10, 10))
 
 	def update(self):
-		self.t += 0.2
+		self.t += 1
+
+	def event(self, event):
+		return
