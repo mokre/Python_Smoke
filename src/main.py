@@ -10,6 +10,7 @@ def main():
 	pygame.init()
 	pygame.display.set_caption("Python Smoke")
 	screen = pygame.display.set_mode(screenSize)
+	clock = pygame.time.Clock()
 	smokeimage = pygame.image.load(os.path.join(sys.path[0], '../res/smoke.png'))
 
 	while running:
