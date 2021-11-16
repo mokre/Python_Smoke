@@ -21,6 +21,9 @@ class smokespawner:
 			if o.t >= o.mt:
 				self.smokeobjects.remove(o)
 
+		if pygame.mouse.get_pressed(num_buttons=3)[0]:
+			self.smokeobjects.append(smoke.smoke(self.x, self.y, pygame.mouse.get_pos()[0], pygame.mouse.get_pos()[1], self.smokeimage))
+
 	def event(self, event):
 		if event.type == pygame.MOUSEBUTTONDOWN:
 			if event.button == 1:
