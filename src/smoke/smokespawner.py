@@ -18,7 +18,7 @@ class smokespawner:
 		self.t += dt
 		for o in self.smokeobjects:
 			o.update(dt)
-			if o.t >= 255:
+			if o.t >= o.mt:
 				self.smokeobjects.remove(o)
 
 	def event(self, event):
