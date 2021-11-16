@@ -19,8 +19,8 @@ class smoke:
 		self.image.set_alpha(255-self.t)
 		screen.blit(self.image, (self.x, self.y))
 		
-	def update(self):
-		self.t += 0.1
+	def update(self, dt):
+		self.t += dt
 		self.x += (self.dx * self.v / (self.t * 0.05))
 		self.y += (self.dy * self.v / (self.t * 0.05))
 

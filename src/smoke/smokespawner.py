@@ -12,13 +12,14 @@ class smokespawner:
 	def draw(self, screen):
 		pygame.draw.rect(screen, (255, 0, 0), pygame.Rect(self.x, self.y, 10, 10))
 		for o in self.smokeobjects:
-			o.update()
 			o.draw(screen)
+
+	def update(self, dt):
+		self.t += dt
+		for o in self.smokeobjects:
+			o.update(dt)
 			if o.t >= 255:
 				self.smokeobjects.remove(o)
-
-	def update(self):
-		self.t += 1
 
 	def event(self, event):
 		if event.type == pygame.MOUSEBUTTONDOWN:

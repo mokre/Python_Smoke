@@ -4,6 +4,7 @@ from smoke import smokespawner
 
 def main():
 	screenSize = (720, 420)
+	dt = 0
 	running = True
 	objects = []
 
@@ -32,9 +33,11 @@ def main():
 		
 		#loop through objects
 		for o in objects:
-			o.update()
+			o.update(dt)
 			o.draw(screen)
-
+		
+		screen.blit(pygame.font.SysFont("Arial", 10).render(str(int(clock.get_fps())), 1, pygame.Color(255, 255, 255)), (0,0))
+		dt = clock.tick(60)
 		pygame.display.flip()
 
 	pygame.quit()
