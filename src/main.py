@@ -37,7 +37,8 @@ def main():
 			o.draw(screen)
 		
 		screen.blit(pygame.font.SysFont("Arial", 10).render(str(int(clock.get_fps())), 1, pygame.Color(255, 255, 255)), (0,0))
-		dt = clock.tick(60)
+		screen.blit(pygame.font.SysFont("Arial", 10).render(str(dt), 1, pygame.Color(255, 255, 255)), (0,20))
+		dt = clock.tick(6000)
 		pygame.display.flip()
 
 	pygame.quit()

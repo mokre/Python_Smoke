@@ -22,8 +22,8 @@ class smoke:
 		
 	def update(self, dt):
 		self.t += dt
-		self.x += (self.dx * self.v / (self.t*0.0002))
-		self.y += (self.dy * self.v / (self.t*0.0002))-1
+		self.x += (self.dx * self.v * dt)#/dt #(self.dx * self.v / (self.t*0.00001))/dt
+		self.y += (self.dy * self.v * dt)#/dt #((self.dy * self.v / (self.t*0.00001))-1)/dt
 
 	def event(self, event):
 		return
