@@ -9,7 +9,8 @@ def main():
 	objects = []
 
 	pygame.init()
-	pygame.display.set_caption("Python Smoke")
+	pygame.display.set_caption("Python Smoke by Moritz Kress")
+	pygame.display.set_icon(pygame.image.load('../res/python_smoke_logo.png'))
 	screen = pygame.display.set_mode(screenSize)
 	clock = pygame.time.Clock()
 	smokeimage = pygame.image.load(os.path.join(sys.path[0], '../res/smoke.png'))
@@ -37,7 +38,6 @@ def main():
 			o.draw(screen)
 		
 		screen.blit(pygame.font.SysFont("Arial", 10).render(str(int(clock.get_fps())), 1, pygame.Color(255, 255, 255)), (0,0))
-		screen.blit(pygame.font.SysFont("Arial", 10).render(str(dt), 1, pygame.Color(255, 255, 255)), (0,20))
 		dt = clock.tick(6000)
 		pygame.display.flip()
 
